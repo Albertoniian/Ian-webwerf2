@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produção Agrícola</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .footer {
+            background-color: #6f42c1; /* Cor roxa */
+            color: white; /* Texto branco */
+            text-align: center; /* Centraliza o texto */
+            padding: 10px 0; /* Adiciona padding */
+            position: relative; /* Para garantir que o footer fique no final do conteúdo */
+            bottom: 0; /* Posiciona o footer no fundo */
+            width: 100%; /* Largura total */
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Garante que o footer fique na parte inferior */
+        }
+        main {
+            flex: 1; /* Faz com que o main ocupe o espaço restante */
+        }
+    </style>
+</head>
+
+<body>
+    <section class="cabecalho">
+        <h1>Produção Agrícola 2025</h1>
+        <h3>Festejando Conexão Campo e Cidade</h3>
+    </section>
+
+<nav class="navbar navbar-expand-lg" style="background-color: #6f42c1;">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active text-white" href="index.html">Página Inicial</a>
+                </li>
+                <li class="nav-item">
+                    <span class="text-white mx-2">|</span>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="inovacoes.html">Inovações Tecnológicas</a>
+                </li>
+                <li class="nav-item">
+                    <span class="text-white mx-2">|</span>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="impactos.html">Impactos da Agricultura</a>
+                </li>
+                <li class="nav-item">
+                    <span class="text-white mx-2">|</span>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="cultivo.html">Cultivo Sustentável</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+    <main class="content container">
+        <!-- Seção Sobre -->
+        <div class="row mt-5 pt-3 align-items-center" id="sobre">
+            <div class="col-md-6 text-center">
+                <img src="./assets/image/agricultura.jpg" alt="Imagem de Agricultura" class="img-fluid" />
+            </div>
+            <div class="col-md-6">
+                <h2>Produção Agrícola: Um Pilar da Sociedade</h2>
+                <p>
+                    A produção agrícola é essencial para a segurança alimentar e o desenvolvimento econômico. 
+                    Técnicas modernas de cultivo e manejo sustentável são fundamentais para maximizar a produtividade 
+                    e preservar o meio ambiente para as futuras gerações.
+                </p>
+            </div>
+        </div>
+
+        <!-- Seção Inovações -->
+        <div class="row mt-4 pt-3 align-items-center">
+            <div class="col-md-6">
+                <h2>Inovações na Produção Agrícola</h2>
+                <p>
+                    A agricultura tem evoluído com a introdução de tecnologias como máquinas automatizadas e 
+                    monitoramento por drones, que ajudam a aumentar a eficiência e a qualidade dos produtos.
+                </p>
+            </div>
+            <div class="col-md-6 text-center">
+                <img src="./assets/image/inovacao.jpg" alt="Inovações na Agricultura" class="img-fluid" />
+            </div>
+        </div>
+
+        <!-- Gráfico -->
+        <div class="row mt-5" id="grafico">
+            <h3 class="text-center mb-4">Gráfico da Produção de Grãos no Brasil (2018-2025)</h3>
+            <div class="col-12">
+                <canvas id="graficoProducao" style="max-height: 300px;"></canvas>
+            </div>
+        </div>
+
+        <!-- Cards com botões para modais -->
+        <div class="row mt-5 mb-4" id="temas">
+            <h3 class="text-center mb-4">Temas em Destaque</h3>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow">
+                    <img src="./assets/image/cultivo.png" class="card-img-top" alt="Cultivo" />
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Cultivo Sustentável</h5>
+                        <p class="card-text flex-grow-1">
+                            Técnicas que respeitam o meio ambiente e maximizam a produção.
+                        </p>
+                        <button type="button" class="btn btn-light mt-3 align-self-start" data-bs-toggle="modal"
+                            data-bs-target="#modalCultivo">
+                            Saiba mais
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow">
+                    <img src="./assets/image/colheita.png" class="card-img-top" alt="Colheita" />
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Colheita Eficiente</h5>
+                        <p class="card-text flex-grow-1">
+                            Métodos e tecnologias para garantir qualidade e redução de perdas.
+                        </p>
+                        <button type="button" class="btn btn-light mt-3 align-self-start" data-bs-toggle="modal"
+                            data-bs-target="#modalColheita">
+                            Saiba mais
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow">
+                    <img src="./assets/image/sustentabilidade.png" class="card-img-top" alt="Sustentabilidade" />
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Agricultura Sustentável</h5>
+                        <p class="card-text flex-grow-1">
+                            Práticas que equilibram produção e preservação ambiental.
+                        </p>
+                        <button type="button" class="btn btn-light mt-3 align-self-start" data-bs-toggle="modal"
+                            data-bs-target="#modalSustentabilidade">
+                            Saiba mais
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Perguntas Frequentes -->
+        <div class="row mb-5" id="faq">
+            <h3 class="text-center mb-4">Perguntas Frequentes</h3>
+            <div class="col-12">
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item shadow-sm">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                O que é produção agrícola?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                A produção agrícola refere-se ao cultivo de plantas e criação de animais para a
+                                alimentação e outros produtos essenciais à sociedade.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item shadow-sm">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Quais são as principais culturas agrícolas?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                As principais culturas incluem arroz, milho, soja, trigo e cana-de-açúcar, entre
+                                outras, que sustentam a economia agrícola do Brasil e o mercado interno.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item shadow-sm">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Como a tecnologia pode ajudar na produção agrícola?
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                A tecnologia melhora a produção por meio de agricultura de precisão, uso de drones,
+                                sensores inteligentes e análise de dados, otimizando recursos e aumentando a eficiência.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <div class="footer">
+        <p>Todos os direitos reservados para Produção Agrícola 2025 - Festejando a conexão campo e cidade.</p>
+    </div>
+
+    <!-- Modais -->
+
+    <!-- Modal Cultivo -->
+    <div class="modal fade" id="modalCultivo" tabindex="-1" aria-labelledby="modalCultivoLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title" id="modalCultivoLabel">Cultivo Sustentável - Detalhes</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        O cultivo sustentável engloba técnicas que permitem produzir alimentos em harmonia com o meio ambiente,
+                        preservando recursos naturais e garantindo a produtividade a longo prazo. Algumas práticas importantes incluem:
+                    </p>
+                    <ul>
+                        <li><strong>Rotação de culturas:</strong> Alternar as plantas cultivadas para melhorar a saúde do solo e reduzir pragas.</li>
+                        <li><strong>Uso de adubação orgânica:</strong> Reduz o impacto ambiental e enriquece o solo com nutrientes naturais.</li>
+                        <li><strong>Conservação do solo:</strong> Técnicas como plantio direto que minimizam a erosão e aumentam a retenção de água.</li>
+                        <li><strong>Irrigação eficiente:</strong> Uso racional da água para evitar desperdícios.</li>
+                        <li><strong>Controle biológico:</strong> Uso de predadores naturais para controlar pragas, evitando pesticidas químicos.</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Colheita -->
+    <div class="modal fade" id="modalColheita" tabindex="-1" aria-labelledby="modalColheitaLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header bg-warning text-dark">
+                    <h5 class="modal-title" id="modalColheitaLabel">Colheita Eficiente - Detalhes</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        A colheita eficiente é crucial para maximizar a qualidade e minimizar perdas dos produtos agrícolas.
+                        Tecnologias e métodos modernos promovem:
+                    </p>
+                    <ul>
+                        <li><strong>Equipamentos automatizados:</strong> Colheitadeiras modernas que aumentam a velocidade e precisão da colheita.</li>
+                        <li><strong>Monitoramento via drones:</strong> Avaliação aérea da maturação das culturas para melhor planejamento da colheita.</li>
+                        <li><strong>Armazenamento adequado:</strong> Infraestrutura que mantém a qualidade dos produtos colhidos.</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Sustentabilidade -->
+    <div class="modal fade" id="modalSustentabilidade" tabindex="-1" aria-labelledby="modalSustentabilidadeLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header bg-info text-white">
+                    <h5 class="modal-title" id="modalSustentabilidadeLabel">Agricultura Sustentável - Detalhes</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        A agricultura sustentável é um modelo que busca eficiência produtiva e equilíbrio ambiental por meio de práticas inovadoras:
+                    </p>
+                    <ul>
+                        <li><strong>Uso racional de recursos naturais:</strong> Manejo consciente da água, solo e energia.</li>
+                        <li><strong>Adoção de energias renováveis:</strong> Integração de sistemas solares e eólicos na produção.</li>
+                        <li><strong>Gestão integrada de pragas:</strong> Combinação de métodos biológicos, culturais e químicos com menor impacto.</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Dados reais aproximados da produção agrícola brasileira (grãos mil toneladas)
+        const dadosProducao = [150, 189, 220, 198, 230, 240, 255, 265];
+        const anos = ['2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025'];
+
+        const ctx = document.getElementById('graficoProducao').getContext('2d');
+        const graficoProducao = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: anos,
+                datasets: [{
+                    label: 'Produção de Grãos (mil toneladas)',
+                    data: dadosProducao,
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderWidth: 3,
+                    fill: true,
+                    tension: 0.4,
+                    pointRadius: 5,
+                    pointHoverRadius: 7,
+                    pointBackgroundColor: 'rgba(75, 192, 192, 1)',
+                    cubicInterpolationMode: 'monotone',
+                }]
+            },
+            options: {
+                responsive: true,
+                interaction: { mode: 'index', intersect: false },
+                plugins: {
+                    legend: { display: true, position: 'top', labels: { font: { size: 16 } } },
+                    tooltip: { enabled: true, mode: 'nearest', intersect: false },
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Produção (mil toneladas)'
+                        },
+                        ticks: {
+                            stepSize: 20
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Ano'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
